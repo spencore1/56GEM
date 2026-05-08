@@ -40,6 +40,8 @@
 -->
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
   /*
     All rules are scoped to .gov-map-container so they cannot
     bleed into surrounding Squarespace page styles.
@@ -47,8 +49,7 @@
   */
 
   .gov-map-container {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-                 Helvetica Neue, Arial, sans-serif;
+    font-family: 'PT Serif', Georgia, serif;
     width: 100%;
     color: #1E293B;
     position: relative; /* needed for absolute tooltip positioning */
@@ -64,8 +65,9 @@
   /* ── Map wrapper ── */
   .gov-map-container .map-svg-wrapper {
     width: 100%;
-    background: #F8FAFC;
+    background: transparent;
     border-radius: 8px;
+    border: 1px solid #E2E8F0;
     line-height: 0; /* collapses whitespace gap below inline SVG */
   }
 
@@ -103,11 +105,21 @@
 
   .gov-map-container .stat-box {
     flex: 1 1 130px;
-    background: #F1F5F9;
-    border: 1px solid #E2E8F0;
-    border-radius: 8px;
-    padding: 14px 10px;
+    background: #FFFFFF;
+    border: 0.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 12px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gov-map-container .stat-box::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 3px 0 0 3px;
   }
 
   .gov-map-container .stat-value {
@@ -117,6 +129,8 @@
     color: #1E293B;
     line-height: 1;
     margin-bottom: 5px;
+    font-family: 'Gilda Display', serif;
+    font-variant-numeric: tabular-nums;
   }
 
   .gov-map-container .stat-label {
@@ -129,47 +143,56 @@
   }
 
   /* Colored stat box variants */
-  .gov-map-container .stat-box--red  { background: #FEF2F2; }
+  .gov-map-container .stat-box--neutral::before { background: #CBD5E1; }
+  .gov-map-container .stat-box--red::before     { background: #DC2626; }
+  .gov-map-container .stat-box--blue::before    { background: #2563EB; }
+  .gov-map-container .stat-box--gold::before    { background: #3D1A6B; }
   .gov-map-container .stat-box--red  .stat-value { color: #9B1C1C; }
-  .gov-map-container .stat-box--blue { background: #EFF6FF; }
   .gov-map-container .stat-box--blue .stat-value { color: #1E3A8A; }
-  .gov-map-container .stat-box--gold { background: #EDE9FE; }
   .gov-map-container .stat-box--gold .stat-value { color: #3D1A6B; }
 
   /* ── Rating legend ── */
   .gov-map-container .rating-legend {
     margin-top: 10px;
-  }
-
-  .gov-map-container .legend-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0.5px solid #E2E8F0;
   }
 
   .gov-map-container .legend-item {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 10px 4px;
     gap: 5px;
-    font-size: 0.74rem;
-    color: #64748B;
-    white-space: nowrap;
+    background: white;
+    border-right: 0.5px solid #E2E8F0;
+  }
+
+  .gov-map-container .legend-item:last-child {
+    border-right: none;
   }
 
   .gov-map-container .legend-swatch {
     display: inline-block;
-    width: 11px;
-    height: 11px;
-    border-radius: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
     flex-shrink: 0;
+  }
+
+  .gov-map-container .legend-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #64748B;
   }
 
   .gov-map-container .legend-updated {
     margin: 7px 0 0;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     color: #94A3B8;
-    font-style: italic;
     line-height: 1.5;
   }
 
@@ -187,11 +210,10 @@
 
   .gov-map-container .detail-placeholder {
     color: #94A3B8;
-    font-style: italic;
+    font-size: 0.8rem;
     margin: 0;
     width: 100%;
     text-align: center;
-    font-size: 0.9rem;
   }
 
   .gov-map-container .detail-state-name {
@@ -199,6 +221,7 @@
     font-weight: 600;
     color: #1E293B;
     margin: 0 0 6px;
+    font-family: 'Gilda Display', serif;
   }
 
   .gov-map-container .detail-body {
@@ -216,7 +239,7 @@
     pointer-events: none;
     background: #1E293B;
     color: #F8FAFC;
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 10px 13px;
     font-size: 0.8rem;
     line-height: 1.5;
@@ -243,6 +266,7 @@
     gap: 8px;
     font-size: 0.75rem;
     margin-bottom: 2px;
+    line-height: 1.4;
   }
 
   .gov-map-container .gov-tooltip .tt-party-r { color: #FCA5A5; }
@@ -301,8 +325,9 @@
     display: flex;
     align-items: center;
     gap: 7px;
-    padding: 5px 0;
-    border-bottom: 1px solid #F1F5F9;
+    padding: 8px 10px;
+    background: #F8FAFC;
+    border-radius: 8px;
     font-size: 0.85rem;
   }
 
@@ -339,6 +364,8 @@
     font-size: 0.78rem;
     color: #64748B;
     white-space: nowrap;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
   }
 
   .gov-map-container .dp-issue-chip {
@@ -347,7 +374,8 @@
     background: #F1F5F9;
     color: #475569;
     padding: 3px 9px;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 0.5px solid #E2E8F0;
   }
 
   .gov-map-container .dp-profile-placeholder {
@@ -469,9 +497,9 @@
       padding: 10px 12px;
     }
 
-    /* Legend: tighter gap */
-    .gov-map-container .legend-row {
-      gap: 5px 10px;
+    /* Legend: tighter on mobile */
+    .gov-map-container .rating-legend {
+      flex-wrap: wrap;
     }
   }
 </style>
@@ -511,18 +539,16 @@
 
   <!-- Rating legend -->
   <div class="rating-legend">
-    <div class="legend-row">
-      <span class="legend-item"><span class="legend-swatch" style="background:#9B1C1C"></span>Safe R</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#DC2626"></span>Likely R</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#FCA5A5"></span>Lean R</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#3D1A6B"></span>Toss-Up</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#93C5FD"></span>Lean D</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#2563EB"></span>Likely D</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#1E3A8A"></span>Safe D</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#AEBDCC"></span>No Race</span>
-    </div>
-    <p class="legend-updated">Data last updated: May 2026 — race ratings reflect current Cook Political Report and Sabato's Crystal Ball projections; many primaries are still pending and candidate fields may change.</p>
+    <span class="legend-item"><span class="legend-swatch" style="background:#9B1C1C"></span><span class="legend-label">Safe R</span></span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#DC2626"></span><span class="legend-label">Likely R</span></span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#FCA5A5"></span><span class="legend-label">Lean R</span></span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#3D1A6B"></span><span class="legend-label">Toss-Up</span></span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#93C5FD"></span><span class="legend-label">Lean D</span></span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#2563EB"></span><span class="legend-label">Likely D</span></span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#1E3A8A"></span><span class="legend-label">Safe D</span></span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#AEBDCC"></span><span class="legend-label">No Race</span></span>
   </div>
+  <p class="legend-updated">Data last updated: May 2026 — race ratings reflect current Cook Political Report and Sabato's Crystal Ball projections; many primaries are still pending and candidate fields may change.</p>
 
   <!-- Detail panel — populated on state click -->
   <div class="detail-panel" id="govDetailPanel">
@@ -1927,6 +1953,7 @@
     var abbr = FIPS_TO_ABBR[String(d.id).padStart(2, '0')] || '';
     d3.select(this).style('fill', getHoverColor(abbr));
     tooltip.innerHTML = buildTooltipHTML(abbr);
+    tooltip.style.borderLeft = '3px solid ' + getBaseColor(abbr);
     tooltip.style.display = 'block';
   }
 
@@ -2068,6 +2095,7 @@
 
     if (!data || !data.active) {
       panel.classList.remove('has-content');
+      panel.style.borderTop = '';
       panel.innerHTML =
         '<div><p class="detail-state-name">' + name + '</p>' +
         '<p class="detail-body">No 2026 gubernatorial race in ' + name + '.</p></div>';
@@ -2075,6 +2103,7 @@
     }
 
     panel.classList.add('has-content');
+    panel.style.borderTop = '4px solid ' + getBaseColor(abbr);
 
     var html = '<div style="width:100%">';
 
