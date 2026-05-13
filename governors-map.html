@@ -548,7 +548,7 @@
     <span class="legend-item"><span class="legend-swatch" style="background:#1E3A8A"></span><span class="legend-label">Safe D</span></span>
     <span class="legend-item"><span class="legend-swatch" style="background:#AEBDCC"></span><span class="legend-label">No Race</span></span>
   </div>
-  <p class="legend-updated">Data last updated: May 2026 — race ratings reflect current Cook Political Report and Sabato's Crystal Ball projections; many primaries are still pending and candidate fields may change.</p>
+  <p class="legend-updated">Data last updated: May 13, 2026</p>
 
   <!-- Detail panel — populated on state click -->
   <div class="detail-panel" id="govDetailPanel">
@@ -627,63 +627,37 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "May 19, 2026",
       raceRating: "Safe R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "Will Ainsworth",
-          party: "R",
-          incumbent: false,
-          bio: "Lt. Governor of Alabama since 2019; former state legislator from Guntersville.",
-          website: "",
-          keyIssues: ["Economic development", "Education reform", "Border enforcement"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democratic field forming in a deeply red state.",
-          website: "",
-          keyIssues: ["Healthcare", "Education", "Rural economy"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Economic development", "Education", "Immigration"],
-      summary: "Kay Ivey is term-limited after two terms. Lt. Gov. Will Ainsworth is a frontrunner in an expected crowded GOP primary. Democrats face long odds. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── ALASKA ────────────────────────────────────────────────────
     AK: {
       active: true,
-      termLimited: false,
-      incumbentRunning: true,
+      termLimited: true,
+      incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 18, 2026",
       raceRating: "Likely R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "Mike Dunleavy",
-          party: "R",
-          incumbent: true,
-          bio: "Governor since December 2018; former state senator from Wasilla. Focuses on resource development and the Permanent Fund dividend.",
-          website: "",
-          keyIssues: ["Oil and gas development", "Permanent Fund dividend", "Public safety"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Alaska Democratic field forming.",
-          website: "",
-          keyIssues: ["Climate resilience", "Healthcare access", "Education"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Oil revenue and budget", "Rural infrastructure", "Public safety"],
-      summary: "Mike Dunleavy seeks a third term in a state that has trended Republican. Alaska's independent-leaning electorate and ranked-choice history keep this Likely R rather than Safe. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── ARIZONA ───────────────────────────────────────────────────
@@ -691,31 +665,27 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Toss-Up",
-      pollingLeader: "tossup",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "July 21, 2026",
+      raceRating: "Lean D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Katie Hobbs",
           party: "D",
           incumbent: true,
-          bio: "Governor since January 2023; former Arizona Secretary of State. Won the 2022 race over Kari Lake by 0.6 points.",
+          bio: "",
           website: "",
-          keyIssues: ["Border policy balance", "Water security", "Reproductive rights"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "Karrin Taylor Robson",
-          party: "R",
-          incumbent: false,
-          bio: "Arizona businesswoman and GOP establishment figure; lost 2022 Republican primary to Kari Lake.",
-          website: "",
-          keyIssues: ["Border security", "Economic development", "Education choice"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Border security", "Water rights", "Economic growth"],
-      summary: "Arizona is a premier 2026 battleground. Hobbs won by less than a point in 2022 and faces an aggressive Republican field. Specific GOP nominee TBD. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── ARKANSAS ──────────────────────────────────────────────────
@@ -723,6 +693,13 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
+      currentGov: "Sarah Huckabee Sanders",
+      currentGovParty: "R",
+      lastGovMargin: "R+65",
+      presMargin2024: "R+31",
+      pvi: "",
+      legislature: "R trifecta",
+      primaryDate: "March 3, 2026",
       raceRating: "Safe R",
       pollingLeader: "R",
       candidates: [
@@ -730,23 +707,21 @@
           name: "Sarah Huckabee Sanders",
           party: "R",
           incumbent: true,
-          bio: "Governor since January 2023; former White House Press Secretary. Daughter of former Arkansas Gov. Mike Huckabee.",
-          website: "",
-          keyIssues: ["Education reform", "Economic development", "Government efficiency"],
+          bio: "Sarah Huckabee Sanders is the 47th Governor of Arkansas. Inaugurated on January 10, 2023, she is the first woman to serve as governor of the state and currently is the youngest governor in the country.\n\nSince taking office, Sarah has enacted transformational, conservative reforms. Those include Arkansas LEARNS, a sweeping overhaul of Arkansas' education system, including higher teacher pay and universal school choice; public safety reforms to invest in prison space and get repeat offenders off the streets; tax cuts to give more taxpayer money back to Arkansans; the Natural State Initiative to grow Arkansas' outdoor economy; and reforms to streamline state government.\n\nPrior to her historic victory, Sarah served as White House Press Secretary for President Donald J. Trump from 2017 to 2019. Sarah was only the third woman – and the very first mom – to ever hold the job of White House Press Secretary.\n\nShe has been recognized in Fortune and TIME Magazine \"40 under 40.\" Sarah is the author of the New York Times bestseller \"Speaking for Myself,\" a former Fox News Channel contributor, and served on the Fulbright board.\n\nSarah grew up in Pine Bluff and Texarkana and is a proud graduate of Little Rock Central High and Ouachita Baptist University. She lives in Little Rock with her husband, Bryan, their children Scarlett, Huck, and George, and their golden retriever, Traveler.",
+          website: "https://www.sarahforgovernor.com/",
           pollingAvg: 0.0
         },
         {
-          name: "TBD Democratic Candidate",
+          name: "Fred Love",
           party: "D",
           incumbent: false,
-          bio: "Democratic field forming in a deeply red state.",
-          website: "",
-          keyIssues: ["Healthcare", "Rural economy", "Education funding"],
+          bio: "Fred Love's life is a testament to resilience, faith, and perseverance. From the start, his path was marked by challenges that could have broken many — but the strength and faith of his mother shaped the man he would become.\n\nAt just four years old, Fred survived a devastating car accident that left him with lasting injuries. Growing up, Fred and his siblings knew poverty firsthand — a night spent in a car, meals split three ways, electricity cut off, close to the verge of homelessness. His mother, Sandra, carried them through with courage and the guiding principle Fred still lives by: \"Be in service to mankind.\"\n\nFred was raised at St. Paul United Methodist Church and on his grandparents' 75-acre farm. His grandfather, a brick mason and farmer, showed him the dignity of labor; his grandmother taught him generosity and compassion.\n\nAt UALR, Fred met ShaRhonda, his wife of 24 years. Together, they raise their children, Fredrick II and Millicent, and worship as a family at Greater Second Baptist Church.\n\nAs a legislator, Fred delivered on his first campaign promise by building the Southwest Health Unit, then brought an Arkansas Children's Hospital clinic to Southwest Little Rock. He spearheaded the Forest of Hope Family Justice Center, set to open in 2026, to provide support for victims of domestic violence and human trafficking.\n\nFred Love is running for Governor to ensure every child has the chance to succeed, every family can thrive, and no Arkansan is left behind.",
+          website: "https://www.fredloveforarkansas.com/",
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Education", "Economic development", "Government efficiency"],
-      summary: "Sarah Huckabee Sanders is a strong favorite for re-election in one of the nation's most Republican states. Polling unavailable."
+      topIssues: [],
+      summary: "Incumbent Republican Sarah Huckabee Sanders is running for re-election in one of the nation's most heavily Republican states, having won her first term in 2022 by over 65 points. Democrats held a primary on March 3, 2026, to select a challenger, though the structural landscape heavily favors the incumbent. The dominant dynamic is Arkansas's deep-red tilt — Trump carried the state by 31 points in 2024 — making this race a near-certain Republican hold."
     },
 
     // ── CALIFORNIA ────────────────────────────────────────────────
@@ -754,31 +729,18 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Safe D",
-      pollingLeader: "D",
-      candidates: [
-        {
-          name: "Eleni Kounalakis",
-          party: "D",
-          incumbent: false,
-          bio: "Lt. Governor of California since 2019; former U.S. Ambassador to Hungary. First woman elected Lt. Governor in California.",
-          website: "",
-          keyIssues: ["Housing affordability", "Climate action", "Economic equity"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "Rob Bonta",
-          party: "D",
-          incumbent: false,
-          bio: "California Attorney General since 2021; former Assemblymember from Oakland.",
-          website: "",
-          keyIssues: ["Public safety reform", "Consumer protection", "Climate enforcement"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Housing crisis", "Homelessness", "Climate change"],
-      summary: "Gavin Newsom is term-limited after two terms. California's top-two primary could produce an all-Democrat general election. Multiple prominent Democrats exploring bids; Republican candidate would face enormous structural disadvantage. Polling unavailable.",
-      dataConfidence: "low"
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 2, 2026",
+      raceRating: "Likely D",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── COLORADO ──────────────────────────────────────────────────
@@ -786,31 +748,18 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 30, 2026",
       raceRating: "Lean D",
-      pollingLeader: "D",
-      candidates: [
-        {
-          name: "Phil Weiser",
-          party: "D",
-          incumbent: false,
-          bio: "Colorado Attorney General since 2019; former law professor and Obama administration technology policy adviser.",
-          website: "",
-          keyIssues: ["Housing affordability", "Consumer protection", "Clean energy"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Colorado Republican field forming.",
-          website: "",
-          keyIssues: ["Economy", "Public safety", "Energy"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Housing", "Water rights", "Energy transition"],
-      summary: "Jared Polis is term-limited. Colorado has shifted significantly toward Democrats in recent cycles, making this a Lean D open seat. Phil Weiser is among the likely Democratic contenders. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── CONNECTICUT ───────────────────────────────────────────────
@@ -818,66 +767,49 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 11, 2026",
       raceRating: "Likely D",
-      pollingLeader: "D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Ned Lamont",
           party: "D",
           incumbent: true,
-          bio: "Governor since January 2019; telecommunications entrepreneur. Won re-election in 2022 by nearly 15 points. Connecticut has no gubernatorial term limits.",
+          bio: "",
           website: "",
-          keyIssues: ["Economic development", "Transportation infrastructure", "Fiscal responsibility"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Connecticut Republican field forming.",
-          website: "",
-          keyIssues: ["Taxes", "Public safety", "Economy"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Economic growth", "Transportation", "Property taxes"],
-      summary: "Ned Lamont cruised to re-election in 2022. Connecticut has trended strongly Democratic. Whether Lamont seeks a third term is uncertain as of data compilation; this entry assumes he runs. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── DELAWARE — no 2026 race (4-yr cycle, last elected 2024) ──
-    DE: { active: false },
+    DE: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── FLORIDA ───────────────────────────────────────────────────
     FL: {
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Likely R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "Ashley Moody",
-          party: "R",
-          incumbent: false,
-          bio: "U.S. Senator (appointed January 2025); former Florida Attorney General 2019–2025.",
-          website: "",
-          keyIssues: ["Immigration enforcement", "Public safety", "Economic growth"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Florida Democrats seek a candidate who can compete in a state Republicans have dominated statewide.",
-          website: "",
-          keyIssues: ["Housing and insurance costs", "Healthcare", "Climate resilience"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Insurance and housing costs", "Immigration", "Education policy"],
-      summary: "Ron DeSantis is term-limited after two terms. Florida has shifted strongly Republican at the statewide level. Cost-of-living and insurance crises give Democrats a potential opening. Republican primary expected to be competitive; Moody is one likely contender. Polling unavailable.",
-      dataConfidence: "low"
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 18, 2026",
+      raceRating: "Safe R",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── GEORGIA ───────────────────────────────────────────────────
@@ -885,31 +817,18 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Lean R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "Burt Jones",
-          party: "R",
-          incumbent: false,
-          bio: "Lt. Governor of Georgia since January 2023; former state senator and close Trump ally.",
-          website: "",
-          keyIssues: ["Economic development", "Immigration", "Election integrity"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "Stacey Abrams",
-          party: "D",
-          incumbent: false,
-          bio: "Voting rights activist and former Minority Leader of the Georgia House; lost gubernatorial races in 2018 and 2022.",
-          website: "",
-          keyIssues: ["Voting rights", "Medicaid expansion", "Economic opportunity"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Economic development", "Voting and election policy", "Healthcare access"],
-      summary: "Brian Kemp cannot seek a third consecutive term. Georgia is a premier battleground. Lt. Gov. Burt Jones is a frontrunner for the GOP nomination. Stacey Abrams's potential third run is uncertain. Polling unavailable.",
-      dataConfidence: "low"
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "May 19, 2026",
+      raceRating: "Toss-Up",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── HAWAII ────────────────────────────────────────────────────
@@ -917,62 +836,55 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 8, 2026",
       raceRating: "Safe D",
-      pollingLeader: "D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Josh Green",
           party: "D",
           incumbent: true,
-          bio: "Governor since December 2022; physician and former state senator. Hawaii's first governor with a medical background.",
+          bio: "",
           website: "",
-          keyIssues: ["Housing affordability", "Climate resilience", "Tourism economy"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Republican field forming in a heavily Democratic state.",
-          website: "",
-          keyIssues: ["Economic growth", "Tourism policy", "Property taxes"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Housing crisis", "Climate and sea-level rise", "Cost of living"],
-      summary: "Josh Green seeks his first full re-election in one of the most reliably Democratic states. Hawaii has not elected a Republican governor since 2002. Polling unavailable."
+      topIssues: [],
+      summary: ""
     },
 
     // ── IDAHO ─────────────────────────────────────────────────────
     ID: {
       active: true,
-      termLimited: true,
-      incumbentRunning: false,
+      termLimited: false,
+      incumbentRunning: true,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "May 19, 2026",
       raceRating: "Safe R",
-      pollingLeader: "R",
+      pollingLeader: "",
       candidates: [
         {
-          name: "Scott Bedke",
+          name: "Brad Little",
           party: "R",
-          incumbent: false,
-          bio: "Lt. Governor of Idaho since January 2023; former Speaker of the Idaho House of Representatives.",
+          incumbent: true,
+          bio: "",
           website: "",
-          keyIssues: ["Agriculture", "Limited government", "Water rights"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democratic field forming in deeply Republican Idaho.",
-          website: "",
-          keyIssues: ["Education", "Healthcare", "Environment"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Water rights", "Growth management", "Agricultural policy"],
-      summary: "Brad Little is term-limited after two terms (Idaho's 8-year consecutive limit). The decisive contest will be in the GOP primary. Lt. Gov. Scott Bedke is an early frontrunner. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── ILLINOIS ──────────────────────────────────────────────────
@@ -980,66 +892,57 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Likely D",
+      currentGov: "JB Pritzker",
+      currentGovParty: "D",
+      lastGovMargin: "D+13",
+      presMargin2024: "D+13",
+      pvi: "",
+      legislature: "D trifecta",
+      primaryDate: "March 17, 2026",
+      raceRating: "Safe D",
       pollingLeader: "D",
       candidates: [
         {
           name: "JB Pritzker",
           party: "D",
           incumbent: true,
-          bio: "Governor since January 2019; billionaire businessman and Hyatt heir. Won re-election in 2022 by 12 points. Illinois has no gubernatorial term limits.",
-          website: "",
-          keyIssues: ["Economic development", "Pension reform", "Reproductive rights"],
+          bio: "Fighting for Illinois families and putting people first has been the work of my life.\n\nI came to the governorship as an outsider with a successful background as a job creator and a dedication to making people's lives better. I was lucky to come from a family that had served in the military and become successful business builders. And despite losing both my parents at a young age, I wanted to follow in their footsteps in service to our nation.\n\nAfter decades of decline, we've begun to turn things around in Illinois. We achieved higher credit ratings, balanced budgets, better-funded pensions, higher educational test scores, and a record number of jobs. Wages are higher, college is more affordable, and our individual rights are better protected.\n\nBefore becoming Governor, I oversaw business operations with 10,000 employees, and I led the creation of a non-profit business incubator that has helped create over 14,500 jobs and made Chicago one of the top tech hubs in the world.\n\nAs Governor, I've added fifteen innovation hubs to help entrepreneurs build new businesses, expanded Small Business Development Centers, grown skills training programs to prepare Illinoisans for the jobs of our modern day economy, made Illinois a home for the industries of the future like quantum, brought tax relief to small businesses, and implemented the largest infrastructure plan in state history.\n\nFrom reproductive freedom to voting rights, civil rights, and LGBTQ equality – Illinois is a beacon of hope and freedom for the entire nation. As I have said after Donald Trump's re-election: \"You come for my people, you come through me.\"",
+          website: "https://jbpritzker.com/",
           pollingAvg: 0.0
         },
         {
-          name: "TBD Republican Candidate",
+          name: "Darren Bailey",
           party: "R",
           incumbent: false,
-          bio: "Illinois Republicans searching for a competitive candidate in a Democratically trending state.",
-          website: "",
-          keyIssues: ["Crime", "Taxes", "Economy"],
+          bio: "Darren Bailey is a third-generation farmer, devoted husband, and lifelong conservative from rural Southern Illinois. He and his sons operate Bailey Family Farm, where he learned the values of hard work, integrity, and faith that continue to guide his life.\n\nDarren and his wife Cindy, married 39 years, live by the motto faith, family, and farming. Together they founded a private Christian school, offering families a Christ-centered education. Darren also served 17 years on the North Clay Board of Education, including 12 as President.\n\nElected to the Illinois House in 2018 and later the State Senate, Darren fought reckless spending, higher taxes, and sanctuary state policies. He refused a taxpayer-funded pension and championed tax relief and agriculture as lead Republican on the Senate Agriculture Committee.\n\nDarren and Cindy live on their family farm near Louisville, where they enjoy time with their four married children and thirteen grandchildren. They worship at Freedom Church in Salem.",
+          website: "https://baileyforillinois.com/",
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Pension debt", "Crime and public safety", "Economic growth"],
-      summary: "JB Pritzker is widely mentioned as a potential 2028 presidential candidate but has not ruled out a third gubernatorial term. Illinois leans solidly Democratic. If Pritzker runs, he is favored; an open seat would still be Lean D. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: "Incumbent Democratic Governor JB Pritzker is running for a third term — which would be historically unprecedented in modern Illinois — against Republican nominee Darren Bailey, the 2022 GOP standard-bearer, making this the first Illinois gubernatorial rematch since 1986. The race's central structural dynamic is Illinois's strong Democratic lean, anchored by the Chicago metro area, which has powered Democratic gubernatorial victories in all but one race since 2002. Pritzker won his 2022 re-election by 12.5 points and faces no major vulnerability unless economic or corruption-related headwinds emerge."
     },
 
     // ── INDIANA — no 2026 race (4-yr cycle, last elected 2024) ───
-    IN: { active: false },
+    IN: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── IOWA ──────────────────────────────────────────────────────
     IA: {
       active: true,
       termLimited: false,
-      incumbentRunning: true,
-      raceRating: "Likely R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "Kim Reynolds",
-          party: "R",
-          incumbent: true,
-          bio: "Governor since May 2017; assumed office when Terry Branstad became Ambassador to China. Elected in 2018 and 2022. Iowa has no gubernatorial term limits.",
-          website: "",
-          keyIssues: ["Education choice", "Economic development", "Agricultural policy"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Iowa Democratic field forming in a state that has trended Republican.",
-          website: "",
-          keyIssues: ["Healthcare", "Rural economy", "Education"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Agricultural economy", "Education", "Healthcare access"],
-      summary: "Kim Reynolds's 2026 re-election plans were uncertain as of data compilation — she was explored as a 2024 presidential contender. Iowa has trended Republican at the statewide level. Entry assumes she runs. Polling unavailable.",
-      dataConfidence: "low"
+      incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 2, 2026",
+      raceRating: "Toss-Up",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── KANSAS ────────────────────────────────────────────────────
@@ -1047,69 +950,43 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Lean R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "Derek Schmidt",
-          party: "R",
-          incumbent: false,
-          bio: "Former Kansas Attorney General (2011–2023); lost the 2022 gubernatorial race to Kelly by approximately 2 points.",
-          website: "",
-          keyIssues: ["Taxes", "Economic development", "Education"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democrats must hold this seat without the incumbency advantage that made Kelly competitive twice.",
-          website: "",
-          keyIssues: ["Healthcare and Medicaid", "Reproductive rights", "Education funding"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Taxes", "Medicaid expansion", "Education funding"],
-      summary: "Laura Kelly is term-limited (Kansas allows 2 consecutive terms). Without Kelly's personal popularity, the seat is expected to lean Republican. Specific 2026 candidate field forming. Polling unavailable.",
-      dataConfidence: "low"
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 4, 2026",
+      raceRating: "Toss-Up",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── KENTUCKY — no 2026 race (odd-year cycle, last elected 2023) ──
-    KY: { active: false },
+    KY: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── LOUISIANA — no 2026 race (odd-year cycle, last elected 2023) ─
-    LA: { active: false },
+    LA: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── MAINE ─────────────────────────────────────────────────────
     ME: {
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Lean D",
-      pollingLeader: "D",
-      candidates: [
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Maine Democrats working to hold this seat without term-limited Janet Mills.",
-          website: "",
-          keyIssues: ["Healthcare access", "Economy", "Clean energy"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "Paul LePage",
-          party: "R",
-          incumbent: false,
-          bio: "Former Maine Governor (2011–2019); lost the 2022 rematch against Mills by approximately 5 points. A potential third run is unconfirmed.",
-          website: "",
-          keyIssues: ["Taxes", "Economy", "Government spending"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Healthcare access", "Fishing and forest economy", "Energy costs"],
-      summary: "Janet Mills is term-limited (Maine allows 2 consecutive terms). Maine leans Democratic but has a history of competitive races. LePage's potential candidacy would tighten the race. Democratic nominee TBD. Polling unavailable.",
-      dataConfidence: "low"
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 9, 2026",
+      raceRating: "Likely R",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── MARYLAND ──────────────────────────────────────────────────
@@ -1117,30 +994,27 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Safe D",
-      pollingLeader: "D",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 23, 2026",
+      raceRating: "Likely D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Wes Moore",
           party: "D",
           incumbent: true,
-          bio: "Governor since January 2023; author, Army combat veteran, and former CEO of Robin Hood Foundation. First Black governor in Maryland history.",
+          bio: "",
           website: "",
-          keyIssues: ["Economic opportunity", "Education", "Public safety"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Maryland Republicans face a significant structural disadvantage in a heavily Democratic state.",
-          website: "",
-          keyIssues: ["Taxes", "Public safety", "Economy"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Economic opportunity", "Education equity", "Public safety"],
-      summary: "Wes Moore is a rising national Democratic figure and strong incumbent in a reliably blue state. Maryland has not elected a Republican governor since Larry Hogan's term ended in 2023. Polling unavailable."
+      topIssues: [],
+      summary: ""
     },
 
     // ── MASSACHUSETTS ─────────────────────────────────────────────
@@ -1148,30 +1022,27 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Safe D",
-      pollingLeader: "D",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "September 1, 2026",
+      raceRating: "Likely D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Maura Healey",
           party: "D",
           incumbent: true,
-          bio: "Governor since January 2023; former Massachusetts Attorney General. First openly gay person elected governor in U.S. history.",
+          bio: "",
           website: "",
-          keyIssues: ["Housing affordability", "Clean energy", "Economic competitiveness"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Massachusetts Republicans face a significant structural disadvantage.",
-          website: "",
-          keyIssues: ["Taxes", "Public safety", "Economy"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Housing crisis", "Clean energy transition", "Economic competitiveness"],
-      summary: "Maura Healey is a strong favorite for re-election in one of the nation's most Democratic states. Polling unavailable."
+      topIssues: [],
+      summary: ""
     },
 
     // ── MICHIGAN ──────────────────────────────────────────────────
@@ -1179,103 +1050,74 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Lean D",
-      pollingLeader: "D",
-      candidates: [
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Strong Democratic bench includes AG Dana Nessel and Lt. Gov. Garlin Gilchrist among potential contenders.",
-          website: "",
-          keyIssues: ["Auto and EV economy", "Reproductive rights", "Education"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Republicans see a major opportunity with an open seat in this key swing state.",
-          website: "",
-          keyIssues: ["Economy", "Public safety", "Energy costs"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Auto and manufacturing economy", "Reproductive rights", "Infrastructure"],
-      summary: "Gretchen Whitmer is term-limited (Michigan allows 2 consecutive terms), opening a marquee battleground seat. Both parties expected to field strong candidates. Specific nominees TBD. Polling unavailable.",
-      dataConfidence: "low"
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 4, 2026",
+      raceRating: "Toss-Up",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── MINNESOTA ─────────────────────────────────────────────────
     MN: {
       active: true,
       termLimited: false,
-      incumbentRunning: true,
+      incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 11, 2026",
       raceRating: "Lean D",
-      pollingLeader: "D",
-      candidates: [
-        {
-          name: "Tim Walz",
-          party: "D",
-          incumbent: true,
-          bio: "Governor since January 2019; former U.S. Representative and high school football coach. Was Kamala Harris's 2024 vice-presidential running mate; returned to the governorship after the ticket's defeat.",
-          website: "",
-          keyIssues: ["Economic opportunity", "Education", "Healthcare"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Minnesota Republicans working to field a strong candidate against a high-profile incumbent.",
-          website: "",
-          keyIssues: ["Economy", "Public safety", "Energy costs"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Economy", "Healthcare", "Education"],
-      summary: "Tim Walz returned to the governor's office after his 2024 VP campaign. Minnesota has no term limits; his 2026 re-election plans were uncertain as of data compilation. Minnesota has trended Democratic in statewide races. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── MISSISSIPPI — no 2026 race (odd-year cycle, last elected 2023) ─
-    MS: { active: false },
+    MS: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── MISSOURI — no 2026 race (4-yr cycle, last elected 2024) ──
-    MO: { active: false },
+    MO: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── MONTANA — no 2026 race (4-yr cycle, last elected 2024) ───
-    MT: { active: false },
+    MT: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── NEBRASKA ──────────────────────────────────────────────────
     NE: {
       active: true,
       termLimited: false,
       incumbentRunning: true,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "May 12, 2026",
       raceRating: "Safe R",
-      pollingLeader: "R",
+      pollingLeader: "",
       candidates: [
         {
           name: "Jim Pillen",
           party: "R",
           incumbent: true,
-          bio: "Governor since January 2023; hog farmer and former University of Nebraska regent. Won the 2022 race with approximately 68% of the vote. In his first of Nebraska's allowed 2 consecutive terms.",
+          bio: "",
           website: "",
-          keyIssues: ["Agricultural economy", "Property tax relief", "Water management"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democratic field forming in a deeply Republican state.",
-          website: "",
-          keyIssues: ["Healthcare", "Rural economy", "Education"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Agricultural policy", "Property taxes", "Water management"],
-      summary: "Jim Pillen is a strong favorite for re-election in his first term in a safe Republican state. Polling unavailable."
+      topIssues: [],
+      summary: ""
     },
 
     // ── NEVADA ────────────────────────────────────────────────────
@@ -1283,31 +1125,27 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Toss-Up",
-      pollingLeader: "tossup",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 9, 2026",
+      raceRating: "Lean R",
+      pollingLeader: "",
       candidates: [
         {
           name: "Joe Lombardo",
           party: "R",
           incumbent: true,
-          bio: "Governor since January 2023; former Clark County Sheriff. Won in 2022 by approximately 1.5 points over Democratic incumbent Steve Sisolak.",
+          bio: "",
           website: "",
-          keyIssues: ["Public safety", "Economic growth", "Education"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Nevada Democrats eager to reclaim the governorship in this highly competitive state.",
-          website: "",
-          keyIssues: ["Economy and jobs", "Healthcare", "Education funding"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Economic diversification", "Education", "Housing costs"],
-      summary: "Nevada is one of the premier 2026 battlegrounds. Lombardo won narrowly in 2022 and faces a challenging environment in a true purple state. Nevada has swung for both parties in recent cycles. Democratic nominee TBD. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── NEW HAMPSHIRE ─────────────────────────────────────────────
@@ -1315,66 +1153,49 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Lean R",
-      pollingLeader: "R",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "September 8, 2026",
+      raceRating: "Likely R",
+      pollingLeader: "",
       candidates: [
         {
           name: "Kelly Ayotte",
           party: "R",
           incumbent: true,
-          bio: "Governor since January 2025; former U.S. Senator (2011–2017) and New Hampshire AG. Won the 2024 race by approximately 14 points. NH has 2-year gubernatorial terms.",
+          bio: "",
           website: "",
-          keyIssues: ["Economy", "Public safety", "Fiscal responsibility"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "New Hampshire Democrats seeking a credible candidate against a popular incumbent.",
-          website: "",
-          keyIssues: ["Healthcare", "Housing", "Economy"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Housing affordability", "Economy", "Healthcare access"],
-      summary: "Kelly Ayotte won decisively in 2024 and enters 2026 as a strong incumbent. New Hampshire's 2-year gubernatorial terms mean another election cycle. The state is competitive at the federal level, but Ayotte has broad cross-party appeal. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── NEW JERSEY — no 2026 race (odd-year cycle, last elected 2025) ─
-    NJ: { active: false },
+    NJ: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── NEW MEXICO ────────────────────────────────────────────────
     NM: {
       active: true,
       termLimited: true,
       incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 2, 2026",
       raceRating: "Lean D",
-      pollingLeader: "D",
-      candidates: [
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "New Mexico Democrats working to hold the governorship after two Lujan Grisham terms.",
-          website: "",
-          keyIssues: ["Energy economy", "Education", "Healthcare access"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Republicans see an opportunity with an open seat in a state that has seen competitive races.",
-          website: "",
-          keyIssues: ["Economy", "Public safety", "Energy"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Oil and gas economy", "Education", "Crime and public safety"],
-      summary: "Michelle Lujan Grisham is term-limited (New Mexico allows 2 consecutive terms). New Mexico leans Democratic but has seen Republican gains in recent cycles. An open seat makes this competitive. Candidates on both sides TBD. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── NEW YORK ──────────────────────────────────────────────────
@@ -1382,69 +1203,69 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Safe D",
-      pollingLeader: "D",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 23, 2026",
+      raceRating: "Likely D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Kathy Hochul",
           party: "D",
           incumbent: true,
-          bio: "Governor since August 2021; assumed office when Andrew Cuomo resigned. Won the 2022 full-term election by approximately 6 points over Lee Zeldin.",
+          bio: "",
           website: "",
-          keyIssues: ["Housing affordability", "Public safety", "Economic development"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Republicans need a strong candidate to compete in a heavily Democratic state.",
-          website: "",
-          keyIssues: ["Crime and public safety", "Taxes", "Economy"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Housing crisis", "Public safety and crime", "Economic competitiveness"],
-      summary: "Kathy Hochul is the incumbent in one of the nation's most Democratic states. The 2022 race was closer than expected, but New York still provides Democrats a strong structural advantage. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── NORTH CAROLINA — no 2026 race (4-yr cycle, last elected 2024) ─
-    NC: { active: false },
+    NC: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── NORTH DAKOTA — no 2026 race (4-yr cycle, last elected 2024) ──
-    ND: { active: false },
+    ND: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── OHIO ──────────────────────────────────────────────────────
     OH: {
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Likely R",
-      pollingLeader: "R",
+      currentGov: "Mike DeWine",
+      currentGovParty: "R",
+      lastGovMargin: "R+26",
+      presMargin2024: "R+11",
+      pvi: "",
+      legislature: "R trifecta",
+      primaryDate: "May 5, 2026",
+      raceRating: "Toss-Up",
+      pollingLeader: "tossup",
       candidates: [
         {
-          name: "Dave Yost",
+          name: "Vivek Ramaswamy",
           party: "R",
           incumbent: false,
-          bio: "Ohio Attorney General since 2019; former state Auditor. A potential frontrunner in the Republican primary.",
-          website: "",
-          keyIssues: ["Economy and manufacturing", "Public safety", "Opioid epidemic"],
+          bio: "Vivek Ramaswamy is a husband, father, and proud Cincinnati native who believes deeply in Ohio's promise. He and his wife of ten years, Dr. Apoorva Ramaswamy (a throat surgeon at Ohio State), are raising their family in greater Columbus, and it's their love for Ohio that fuels Vivek's run for governor.\n\nVivek's drive to improve Ohio was first shaped by his loving parents, and later by a great 6th grade teacher at his Greater Cincinnati public school who challenged him to aim higher and believe in what he could achieve. That spark stayed with him, empowering him to carve a path that has made him one of the most successful business leaders of his generation.\n\nVivek has made his mark on the world by challenging the status quo and building companies that changed thousands of American lives for the better, including developing life saving medications for patients. As Governor, he'll apply that same bold, results-driven approach to help all Ohioans achieve their own version of the American Dream.\n\nSince launching his campaign, Vivek has built one of the broadest coalitions in modern history. From farmers and truckers to business leaders, trade workers and sheriffs, Vivek is uniting Ohioans across party lines. He has personally visited all of Ohio's 88 counties, listening to hard-working men and women who want to see our state prosper.\n\nAs our next Governor, Vivek wants Ohio to show the rest of the country that we can work together to build a better future for generations to come.",
+          website: "https://vivekforohio.com/",
           pollingAvg: 0.0
         },
         {
-          name: "TBD Democratic Candidate",
+          name: "Amy Acton",
           party: "D",
           incumbent: false,
-          bio: "Ohio Democrats seek to rebuild statewide competitiveness in an increasingly Republican-leaning state.",
-          website: "",
-          keyIssues: ["Manufacturing and jobs", "Healthcare", "Reproductive rights"],
+          bio: "Dr. Amy Acton grew up in Youngstown, Ohio under difficult circumstances. But that made Amy tough – and now, Amy is running for governor to fight for every Ohio family that's struggling today.\n\nGrowing up in Youngstown, in a family who'd worked in the steel mills, Amy Acton faced a difficult childhood—overcoming abuse, hunger, and periods of homelessness. That challenging upbringing molded the values and determination that have shaped a career dedicated to lifting others.\n\nFrom working as a waitress to delivering newspapers, Amy worked her way out of poverty and put herself through college and medical school to become a doctor. She experienced firsthand what so many Ohio families face today—working harder than ever and still feeling like they're falling behind.\n\nAfter medical school, she began a lifelong focus on children's health. Her first assignment was a pediatrics residency tackling the horrific consequences of the crack cocaine epidemic in children. She then began a residency at Children's Hospital and Ohio State University, where she trained in pediatrics and preventive medicine. There, she created the first-ever residency rotation in child advocacy and gained a master's degree in public health.\n\nIn 2019, Governor DeWine asked Amy to serve in his administration as the Director of the Ohio Department of Public Health. Amy put partisanship aside to serve the people of Ohio. When the pandemic hit, her steady leadership and voice for common sense not only saved countless lives but also helped Ohio's economy and schools open earlier than other states. For her leadership, Amy earned a Profile in Courage Award from the John F. Kennedy Library Foundation in 2021 and was named Woman of the Year for Ohio by USA Today in 2022.\n\nNow, Amy's running for Governor because she refuses to look away from Ohioans who are struggling while politicians in Columbus cater to billionaires and corporations.\n\nAmy lives in Bexley, Ohio with her husband, Eric, a lifelong teacher and coach in Bexley Public Schools. Together they have six kids and enjoy traveling, exploring nature, and spending time with their good friends and growing family.",
+          website: "https://actonforgovernor.com/",
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Manufacturing economy", "Opioid crisis", "Healthcare"],
-      summary: "Mike DeWine is term-limited after two terms (Ohio allows 2 consecutive terms). Ohio has shifted significantly Republican in recent cycles, making this Likely R. Republican primary expected to be competitive. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: "This is an open-seat race as Republican incumbent Mike DeWine is term-limited. Trump-endorsed Vivek Ramaswamy won the May 5 Republican primary with over 82% of the vote and will face Democrat Amy Acton, the former state health director who was unopposed in her primary. Despite Ohio's rightward drift over the past decade, polls show a competitive general election, with prediction markets recently favoring Acton as Ramaswamy faces headwinds in a state that hasn't elected a Democratic governor in 20 years."
     },
 
     // ── OKLAHOMA ──────────────────────────────────────────────────
@@ -1452,31 +1273,18 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 16, 2026",
       raceRating: "Safe R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Oklahoma Republican primary will choose the next governor in this safely red state.",
-          website: "",
-          keyIssues: ["Energy industry", "Education", "Economy"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democratic field forming with long-shot prospects in a deeply red state.",
-          website: "",
-          keyIssues: ["Healthcare", "Education", "Rural economy"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Oil and gas economy", "Education", "Healthcare access"],
-      summary: "Kevin Stitt is term-limited after two terms (Oklahoma allows 2 consecutive terms). Oklahoma is one of the nation's most Republican states; the real contest will be in the GOP primary. Candidates TBD. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── OREGON ────────────────────────────────────────────────────
@@ -1484,31 +1292,27 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Likely D",
-      pollingLeader: "D",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "May 19, 2026",
+      raceRating: "Lean D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Tina Kotek",
           party: "D",
           incumbent: true,
-          bio: "Governor since January 2023; former Speaker of the Oregon House. Won a competitive three-way 2022 race with 47% of the vote. Oregon's 2-term limit allows her a second term.",
+          bio: "",
           website: "",
-          keyIssues: ["Homelessness and housing", "Wildfire response", "Drug policy reform"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Oregon Republicans seek a candidate to capitalize on voter discontent over homelessness and public safety.",
-          website: "",
-          keyIssues: ["Crime and public safety", "Economy", "Education"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Homelessness", "Housing costs", "Wildfire and climate"],
-      summary: "Tina Kotek won with a plurality in a three-way 2022 race. Oregon leans Democratic, but persistent concerns about homelessness and drug policy create some vulnerability. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── PENNSYLVANIA ──────────────────────────────────────────────
@@ -1516,31 +1320,27 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "May 19, 2026",
       raceRating: "Lean D",
-      pollingLeader: "D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Josh Shapiro",
           party: "D",
           incumbent: true,
-          bio: "Governor since January 2023; former Pennsylvania Attorney General. Won the 2022 election by approximately 14 points over Doug Mastriano.",
+          bio: "",
           website: "",
-          keyIssues: ["Economic opportunity", "Education funding", "Energy transition"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Pennsylvania Republicans seek a credible challenger against a high-profile incumbent in the ultimate swing state.",
-          website: "",
-          keyIssues: ["Economy", "Public safety", "Energy"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Economic development", "Education funding", "Energy policy"],
-      summary: "Josh Shapiro is a high-profile incumbent widely considered a future national candidate. Pennsylvania is the quintessential swing state, but Shapiro's strong personal approval makes this Lean D rather than Toss-Up. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── RHODE ISLAND ──────────────────────────────────────────────
@@ -1548,31 +1348,27 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Safe D",
-      pollingLeader: "D",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "September 8, 2026",
+      raceRating: "Likely D",
+      pollingLeader: "",
       candidates: [
         {
           name: "Dan McKee",
           party: "D",
           incumbent: true,
-          bio: "Governor since March 2021; assumed office when Gina Raimondo became U.S. Commerce Secretary. Won the 2022 general election.",
+          bio: "",
           website: "",
-          keyIssues: ["Economic development", "Education", "Healthcare access"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Rhode Island Republicans seek a competitive candidate in a heavily Democratic state.",
-          website: "",
-          keyIssues: ["Taxes", "Economy", "Public safety"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Economic development", "Education", "Healthcare costs"],
-      summary: "Rhode Island leans heavily Democratic. Whether McKee seeks re-election or steps aside for another Democrat is uncertain as of data compilation. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── SOUTH CAROLINA ────────────────────────────────────────────
@@ -1580,63 +1376,46 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      raceRating: "Safe R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "South Carolina Republican primary will select the next governor. Multiple statewide officials expected to compete.",
-          website: "",
-          keyIssues: ["Economic development", "Education", "Military and veterans"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democratic field forming with long odds in a reliably red state.",
-          website: "",
-          keyIssues: ["Healthcare", "Education", "Economic equity"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Economic development", "Education", "Military economy"],
-      summary: "Henry McMaster is term-limited after his two elected terms (2018, 2022); note that application of SC's consecutive-term limit to his partial appointed period carries some ambiguity. South Carolina is reliably Republican; the real contest is in the GOP primary. Candidates TBD. Polling unavailable.",
-      dataConfidence: "low"
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 9, 2026",
+      raceRating: "Likely R",
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── SOUTH DAKOTA ──────────────────────────────────────────────
     SD: {
       active: true,
-      termLimited: true,
-      incumbentRunning: false,
+      termLimited: false,
+      incumbentRunning: true,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "June 2, 2026",
       raceRating: "Safe R",
-      pollingLeader: "R",
+      pollingLeader: "",
       candidates: [
         {
-          name: "Tony Venhuizen",
+          name: "Larry Rhoden",
           party: "R",
-          incumbent: false,
-          bio: "Lt. Governor of South Dakota since January 2023; former chief of staff to Gov. Dennis Daugaard.",
+          incumbent: true,
+          bio: "",
           website: "",
-          keyIssues: ["Agriculture", "Economy", "Limited government"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democratic field forming in a deeply Republican state.",
-          website: "",
-          keyIssues: ["Healthcare", "Agriculture", "Education"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Agricultural economy", "Tourism", "State budget"],
-      summary: "Kristi Noem is term-limited after two terms (South Dakota's consecutive-term limit). The decisive contest will be in the GOP primary. Lt. Gov. Tony Venhuizen is an early potential contender. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── TENNESSEE ─────────────────────────────────────────────────
@@ -1644,31 +1423,18 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 6, 2026",
       raceRating: "Safe R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Tennessee Republican primary will select the next governor. Multiple legislators and officials expected to enter.",
-          website: "",
-          keyIssues: ["Economic development", "Education", "Healthcare"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democrats face long odds in a state trending increasingly Republican.",
-          website: "",
-          keyIssues: ["Education", "Healthcare", "Economic opportunity"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Economic growth", "Education", "Healthcare"],
-      summary: "Bill Lee is term-limited after two terms (Tennessee's consecutive-term limit). Tennessee is a reliably Republican state with a rapidly growing economy. The gubernatorial contest will be decided in the GOP primary. Candidates TBD. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── TEXAS ─────────────────────────────────────────────────────
@@ -1676,107 +1442,94 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Likely R",
+      currentGov: "Greg Abbott",
+      currentGovParty: "R",
+      lastGovMargin: "R+11",
+      presMargin2024: "R+14",
+      pvi: "",
+      legislature: "R trifecta",
+      primaryDate: "March 3, 2026",
+      raceRating: "Safe R",
       pollingLeader: "R",
       candidates: [
         {
           name: "Greg Abbott",
           party: "R",
           incumbent: true,
-          bio: "Governor since January 2015; former Texas Attorney General. Won re-election in 2022 by approximately 11 points. Texas has no gubernatorial term limits.",
-          website: "",
-          keyIssues: ["Border security", "Energy dominance", "Economic development"],
+          bio: "Named one of the 100 Most Influential People in the world by TIME in 2024, Governor Greg Abbott is building upon his record as a strong conservative leader who fights to preserve Texas values and ensure the Lone Star State remains the best place to live, work, and raise a family.\n\nGovernor Abbott's vision for an even stronger Texas is focused on creating more jobs and economic opportunity, educating the leaders of the next generation, protecting individual liberties, restoring parental rights in education, and upholding the highest standards of public safety.\n\nTo ensure that Texas remains a beacon of liberty, Governor Abbott has taken unprecedented steps to secure our southern border, including busing migrants to sanctuary cities like Washington, D.C., building the Texas border wall, declaring Mexican drug cartels as terrorist organizations, and, through his Operation Lone Star border security initiatives, seizing enough lethal doses of fentanyl to kill every man, woman, and child in the United States, Mexico, and Canada combined.\n\nEach year Governor Abbott has been in office, Texas has been the number one state for business in America. Texas is the headquarter of headquarters, home to 54 Fortune 500 companies. The $2.7 trillion Texas economy is the 8th largest in the world. And as the number one state for tech exports, \"Made in Texas\" has never been a bigger brand.\n\nGovernor Abbott provided additional property tax relief as part of the 89th Legislative Session. In addition, he empowered parents to control their children's schooling and provided students with critical career training that can lead to high-paying, in-demand jobs.\n\nRunning for a historic fourth term in 2026, Governor Abbott was first elected as the 48th Governor of Texas in 2014. Before being elected Governor, he was the 50th and longest-serving Attorney General in Texas History. He also served as a Justice on the Supreme Court of Texas and as a State District Judge in Harris County.\n\nA native Texan, Governor Abbott was born in Wichita Falls and raised in Duncanville. He graduated from the University of Texas at Austin and earned a law degree from Vanderbilt University. Shortly after law school, he was paralyzed by a falling tree while jogging. From his faith and family, he gained strength, recognizing \"our lives are not defined by our challenges, but by how we respond to them.\"\n\nGovernor Abbott is married to Cecilia, a former teacher and principal, who is the first Hispanic First Lady of Texas. They have been married since 1981, and have one daughter, Audrey, who married her college sweetheart in 2025.",
+          website: "https://www.gregabbott.com/",
           pollingAvg: 0.0
         },
         {
-          name: "TBD Democratic Candidate",
+          name: "Gina Hinojosa",
           party: "D",
           incumbent: false,
-          bio: "Texas Democrats seeking a competitive candidate against a well-funded incumbent in a state with growing suburban competitiveness.",
-          website: "",
-          keyIssues: ["Healthcare", "Education", "Economy"],
+          bio: "Gina Hinojosa is a native Texan, born and raised in the Rio Grande Valley. A proud product of Brownsville public schools, Gina graduated from the University of Texas and received her law degree from George Washington University.\n\nGina began her career as an advocate for families and workers as a civil rights and union lawyer. She represented hard working Texans fighting to make sure they were treated fairly, got the wages and benefits they earned, and helping them support their families.\n\nGina never planned on running for office. But when her son's elementary school was threatened for closure by state budget cuts, Gina rallied other parents, ran for Austin ISD School Board—and won. She kept her son's school open, along with every other public school in the district. Her fellow trustees appointed her Board President in 2015.\n\nElected to the Texas House of Representatives, Gina fought for and helped win an investment of more than $11 billion in Texas public schools. She led on legislation that would reduce standardized testing and provide pay raises for every Texas teacher.\n\nA fierce champion of working Texans, Gina has been fighting back against billionaires and corporate interests in the legislature for a decade, pushing the state to invest in neighborhood schools, expand health care access, and lower costs for Texans.\n\nGina also passed the most significant corporate reform legislation in a decade, creating a new kind of corporation in Texas — a public benefit corporation — using corporate power to achieve public good.\n\nGrowing up in the Valley, Gina learned an important early lesson from her grandmother: \"No te dejes.\" Fight back.\n\nNow, Gina is taking the fight directly to Greg Abbott, who for over a decade has helped the corrupt elite get rich while working Texans struggle to get by.",
+          website: "https://ginafortexas.com/",
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Border security", "Energy policy", "Economic growth"],
-      summary: "Greg Abbott seeks a fourth term in a state trending Republican at the statewide level. Texas has seen Democratic gains in suburban areas but Abbott remains well-funded and favored. Likely R rather than Safe R acknowledges long-run demographic shifts. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: "Incumbent Republican Greg Abbott won his primary on March 3, 2026, with 82% of the vote, and is seeking an unprecedented fourth term as governor. His leading Democratic challenger is state Rep. Gina Hinojosa, who won the Democratic primary and faces a runoff on May 26, 2026. Abbott holds an overwhelming financial advantage — over $105 million on hand — while Hinojosa raised $1 million in her first 10 weeks, making this race structurally uncompetitive in a state Donald Trump carried by double digits in 2024."
     },
 
     // ── UTAH — no 2026 race (4-yr cycle, last elected 2024) ───────
-    UT: { active: false },
+    UT: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── VERMONT ───────────────────────────────────────────────────
     VT: {
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      raceRating: "Lean R",
-      pollingLeader: "R",
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 11, 2026",
+      raceRating: "Likely R",
+      pollingLeader: "",
       candidates: [
         {
           name: "Phil Scott",
           party: "R",
           incumbent: true,
-          bio: "Governor since January 2017; moderate Republican who has consistently won in one of the nation's most Democratic states. Vermont has 2-year gubernatorial terms and no term limits.",
+          bio: "",
           website: "",
-          keyIssues: ["Housing affordability", "Economic opportunity", "Climate adaptation"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Vermont Democrats have struggled to defeat the uniquely popular moderate Scott.",
-          website: "",
-          keyIssues: ["Climate action", "Healthcare", "Housing"],
           pollingAvg: 0.0
         }
       ],
-      topIssues: ["Housing affordability", "Economic development", "Climate change"],
-      summary: "Vermont has 2-year gubernatorial terms. Phil Scott is a uniquely popular moderate Republican winning repeatedly in a heavily Democratic state. His 2026 re-election plans assumed but unconfirmed as of data compilation. Rating applies only if Scott is on the ballot; without him this seat would be Safe D. Polling unavailable.",
-      dataConfidence: "low"
+      topIssues: [],
+      summary: ""
     },
 
     // ── VIRGINIA — no 2026 race (odd-year cycle, last elected 2025) ──
-    VA: { active: false },
+    VA: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── WASHINGTON — no 2026 race (4-yr cycle, last elected 2024) ─
-    WA: { active: false },
+    WA: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── WEST VIRGINIA — no 2026 race (4-yr cycle, last elected 2024) ─
-    WV: { active: false },
+    WV: { active: false, raceRating: "No race", candidates: [], topIssues: [], summary: "" },
 
     // ── WISCONSIN ─────────────────────────────────────────────────
     WI: {
       active: true,
       termLimited: false,
-      incumbentRunning: true,
+      incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 11, 2026",
       raceRating: "Toss-Up",
-      pollingLeader: "tossup",
-      candidates: [
-        {
-          name: "Tony Evers",
-          party: "D",
-          incumbent: true,
-          bio: "Governor since January 2019; former Wisconsin Superintendent of Public Instruction. Won narrowly in both 2018 and 2022. Wisconsin has no gubernatorial term limits.",
-          website: "",
-          keyIssues: ["Education", "Healthcare", "Economy"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Wisconsin Republicans eager to reclaim the governorship in the nation's most competitive swing state.",
-          website: "",
-          keyIssues: ["Economy", "Public safety", "Education"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Economy and manufacturing", "Education", "Abortion policy"],
-      summary: "Wisconsin is one of the nation's premier swing states. Tony Evers won narrowly in both 2018 and 2022. His 2026 re-election plans uncertain — could retire or seek a third term. Either way, this race is expected to be highly competitive. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     },
 
     // ── WYOMING ───────────────────────────────────────────────────
@@ -1784,35 +1537,21 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
+      currentGov: "",
+      currentGovParty: "",
+      lastGovMargin: "",
+      presMargin2024: "",
+      pvi: "",
+      legislature: "",
+      primaryDate: "August 18, 2026",
       raceRating: "Safe R",
-      pollingLeader: "R",
-      candidates: [
-        {
-          name: "TBD Republican Candidate",
-          party: "R",
-          incumbent: false,
-          bio: "Wyoming Republican primary will select the next governor in the nation's most Republican state by voter registration.",
-          website: "",
-          keyIssues: ["Energy industry", "Agriculture", "Limited government"],
-          pollingAvg: 0.0
-        },
-        {
-          name: "TBD Democratic Candidate",
-          party: "D",
-          incumbent: false,
-          bio: "Democrats face near-impossible odds in Wyoming.",
-          website: "",
-          keyIssues: ["Environment", "Healthcare", "Economy"],
-          pollingAvg: 0.0
-        }
-      ],
-      topIssues: ["Energy industry", "Agricultural economy", "Federal land policy"],
-      summary: "Mark Gordon is term-limited after two terms (Wyoming's consecutive-term limit). Wyoming is the nation's most Republican state by registration. The gubernatorial contest will be decided in the GOP primary. Candidates TBD. Polling unavailable.",
-      dataConfidence: "low"
+      pollingLeader: "",
+      candidates: [],
+      topIssues: [],
+      summary: ""
     }
 
   };
-
   // ============================================================
   // COLOR HELPERS
   // ============================================================
@@ -2116,6 +1855,22 @@
     if (data.incumbentRunning) html += '<span class="dp-tag">Incumbent Running</span>';
     html += '</div>';
 
+    // Context bar
+    var contextItems = [];
+    if (data.legislature)    contextItems.push({ label: data.legislature });
+    if (data.pvi)            contextItems.push({ label: 'PVI: ' + data.pvi });
+    if (data.presMargin2024) contextItems.push({ label: '2024 Pres: ' + data.presMargin2024 });
+    if (data.primaryDate)    contextItems.push({ label: 'Primary: ' + data.primaryDate });
+
+    if (contextItems.length) {
+      html += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">';
+      contextItems.forEach(function(item) {
+        html += '<span style="font-size:11px;padding:3px 8px;border-radius:4px;' +
+                'background:#F1F5F9;color:#475569;font-weight:500">' + item.label + '</span>';
+      });
+      html += '</div>';
+    }
+
     // ── Summary ──
     if (data.summary) {
       html += '<p class="detail-body" style="margin-bottom:14px">' + data.summary + '</p>';
@@ -2146,6 +1901,28 @@
       data.topIssues.forEach(function (issue) {
         html += '<span class="dp-issue-chip">' + issue + '</span>';
       });
+      html += '</div>';
+    }
+
+    // Election history
+    if (data.lastGovMargin || data.presMargin2024) {
+      html += '<p class="dp-section-label">Election History</p>';
+      html += '<div style="display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap">';
+      if (data.lastGovMargin) {
+        html += '<div style="font-size:12px;color:#64748B">' +
+                '<span style="font-weight:600;color:#1E293B">' + data.lastGovMargin + '</span>' +
+                ' 2022 Gov</div>';
+      }
+      if (data.presMargin2024) {
+        html += '<div style="font-size:12px;color:#64748B">' +
+                '<span style="font-weight:600;color:#1E293B">' + data.presMargin2024 + '</span>' +
+                ' 2024 Pres</div>';
+      }
+      if (data.currentGov) {
+        var govDot = data.currentGovParty === 'R' ? '#EF4444' : (data.currentGovParty === 'D' ? '#3B82F6' : '#8B5CF6');
+        html += '<div style="font-size:12px;color:#64748B">' +
+                'Gov: <span style="font-weight:600;color:' + govDot + '">' + data.currentGov + '</span></div>';
+      }
       html += '</div>';
     }
 
