@@ -196,16 +196,54 @@
     line-height: 1.5;
   }
 
-  /* ── Detail panel ── */
+  /* ── Detail panel — modal overlay ── */
   .gov-map-container .detail-panel {
-    margin-top: 14px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 680px;
+    max-width: calc(100vw - 32px);
+    min-width: 320px;
+    max-height: 80vh;
+    overflow-y: auto;
     padding: 20px 24px;
     background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    border-radius: 8px;
-    min-height: 88px;
-    display: flex;
-    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    z-index: 1000;
+  }
+
+  /* ── Modal backdrop ── */
+  .gov-map-container .detail-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  /* ── Modal close button ── */
+  .gov-map-container .detail-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 20px;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .gov-map-container .detail-close-btn:hover {
+    color: #000;
   }
 
   .gov-map-container .detail-placeholder {
@@ -217,7 +255,7 @@
   }
 
   .gov-map-container .detail-state-name {
-    font-size: 1.15rem;
+    font-size: 1.375rem;
     font-weight: 600;
     color: #1E293B;
     margin: 0 0 6px;
@@ -296,20 +334,20 @@
 
   .gov-map-container .dp-rating-badge {
     display: inline-block;
-    font-size: 0.72rem;
+    font-size: 13px;
     font-weight: 700;
-    padding: 2px 9px;
-    border-radius: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
     color: #fff;
   }
 
   .gov-map-container .dp-tag {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 13px;
     color: #64748B;
-    padding: 2px 7px;
+    padding: 6px 12px;
     border: 1px solid #E2E8F0;
-    border-radius: 10px;
+    border-radius: 6px;
   }
 
   .gov-map-container .dp-section-label {
@@ -317,7 +355,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    color: #94A3B8;
+    color: #000000;
     margin: 0 0 5px;
   }
 
@@ -423,6 +461,8 @@
     color: #475569;
     line-height: 1.55;
     margin: 0 0 10px;
+    max-height: 120px;
+    overflow-y: auto;
   }
 
   .gov-map-container .dp-profile-issues {
@@ -434,11 +474,12 @@
 
   .gov-map-container .dp-profile-stats {
     display: flex;
-    gap: 16px;
+    flex-direction: column;
+    gap: 4px;
     flex-wrap: wrap;
     font-size: 0.8rem;
     color: #64748B;
-    margin-top: 4px;
+    margin-top: 10px;
   }
 
   .gov-map-container .dp-profile-stat-label {
@@ -457,9 +498,6 @@
 
   /* ── Responsive — tablet (600–959 px) ── */
   @media (max-width: 959px) {
-    .gov-map-container .detail-panel {
-      padding: 16px 18px;
-    }
   }
 
   /* ── Responsive — mobile (< 600 px) ── */
@@ -477,9 +515,9 @@
       font-size: 1.5rem;
     }
 
-    /* Detail panel: tighter padding */
+    /* Detail panel modal: tighter padding on mobile */
     .gov-map-container .detail-panel {
-      padding: 14px;
+      padding: 16px;
     }
 
     /* Candidate row: allow meta to wrap rather than overflow */
@@ -548,10 +586,14 @@
     <span class="legend-item"><span class="legend-swatch" style="background:#1E3A8A"></span><span class="legend-label">Safe D</span></span>
     <span class="legend-item"><span class="legend-swatch" style="background:#AEBDCC"></span><span class="legend-label">No Race</span></span>
   </div>
-  <p class="legend-updated">Data last updated: May 13, 2026</p>
+  <p class="legend-updated">Data last updated: June 2, 2026</p>
 
-  <!-- Detail panel — populated on state click -->
+  <!-- Backdrop — shown behind modal on state click -->
+  <div class="detail-backdrop" id="govDetailBackdrop"></div>
+
+  <!-- Detail panel modal — populated on state click -->
   <div class="detail-panel" id="govDetailPanel">
+    <button class="detail-close-btn" id="govDetailClose" aria-label="Close">&times;</button>
     <p class="detail-placeholder">Click a state to see race details</p>
   </div>
 
@@ -627,10 +669,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Kay Ivey",
+      currentGovParty: "R",
+      lastGovMargin: "R+19",
+      presMargin2024: "R+30.5",
       pvi: "",
       legislature: "",
       primaryDate: "May 19, 2026",
@@ -646,10 +688,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Mike Dunleavy",
+      currentGovParty: "R",
+      lastGovMargin: "R+19",
+      presMargin2024: "R+13.1",
       pvi: "",
       legislature: "",
       primaryDate: "August 18, 2026",
@@ -665,10 +707,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Katie Hobbs",
+      currentGovParty: "D",
+      lastGovMargin: "D+0.6",
+      presMargin2024: "R+5.5",
       pvi: "",
       legislature: "",
       primaryDate: "July 21, 2026",
@@ -696,7 +738,7 @@
       currentGov: "Sarah Huckabee Sanders",
       currentGovParty: "R",
       lastGovMargin: "R+65",
-      presMargin2024: "R+31",
+      presMargin2024: "R+30.6",
       pvi: "",
       legislature: "R trifecta",
       primaryDate: "March 3, 2026",
@@ -729,10 +771,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Gavin Newsom",
+      currentGovParty: "D",
+      lastGovMargin: "D+19",
+      presMargin2024: "D+20.1",
       pvi: "",
       legislature: "",
       primaryDate: "June 2, 2026",
@@ -748,10 +790,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Jared Polis",
+      currentGovParty: "D",
+      lastGovMargin: "D+8",
+      presMargin2024: "D+11.0",
       pvi: "",
       legislature: "",
       primaryDate: "June 30, 2026",
@@ -767,10 +809,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Ned Lamont",
+      currentGovParty: "D",
+      lastGovMargin: "D+10",
+      presMargin2024: "D+14.5",
       pvi: "",
       legislature: "",
       primaryDate: "August 11, 2026",
@@ -798,10 +840,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Ron DeSantis",
+      currentGovParty: "R",
+      lastGovMargin: "R+19",
+      presMargin2024: "R+13.1",
       pvi: "",
       legislature: "",
       primaryDate: "August 18, 2026",
@@ -817,10 +859,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Brian Kemp",
+      currentGovParty: "R",
+      lastGovMargin: "R+8",
+      presMargin2024: "R+2.2",
       pvi: "",
       legislature: "",
       primaryDate: "May 19, 2026",
@@ -836,10 +878,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Josh Green",
+      currentGovParty: "D",
+      lastGovMargin: "D+16",
+      presMargin2024: "D+23.1",
       pvi: "",
       legislature: "",
       primaryDate: "August 8, 2026",
@@ -864,10 +906,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Brad Little",
+      currentGovParty: "R",
+      lastGovMargin: "R+18",
+      presMargin2024: "R+36.5",
       pvi: "",
       legislature: "",
       primaryDate: "May 19, 2026",
@@ -931,10 +973,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Kim Reynolds",
+      currentGovParty: "R",
+      lastGovMargin: "R+16",
+      presMargin2024: "R+13.2",
       pvi: "",
       legislature: "",
       primaryDate: "June 2, 2026",
@@ -950,10 +992,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Laura Kelly",
+      currentGovParty: "D",
+      lastGovMargin: "D+2",
+      presMargin2024: "R+16.1",
       pvi: "",
       legislature: "",
       primaryDate: "August 4, 2026",
@@ -975,10 +1017,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Janet Mills",
+      currentGovParty: "D",
+      lastGovMargin: "D+15",
+      presMargin2024: "D+6.9",
       pvi: "",
       legislature: "",
       primaryDate: "June 9, 2026",
@@ -994,10 +1036,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Wes Moore",
+      currentGovParty: "D",
+      lastGovMargin: "D+32",
+      presMargin2024: "D+28.5",
       pvi: "",
       legislature: "",
       primaryDate: "June 23, 2026",
@@ -1022,10 +1064,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Maura Healey",
+      currentGovParty: "D",
+      lastGovMargin: "D+29",
+      presMargin2024: "D+25.2",
       pvi: "",
       legislature: "",
       primaryDate: "September 1, 2026",
@@ -1050,10 +1092,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Gretchen Whitmer",
+      currentGovParty: "D",
+      lastGovMargin: "D+11",
+      presMargin2024: "R+1.4",
       pvi: "",
       legislature: "",
       primaryDate: "August 4, 2026",
@@ -1069,10 +1111,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Tim Walz",
+      currentGovParty: "D",
+      lastGovMargin: "D+8",
+      presMargin2024: "D+4.2",
       pvi: "",
       legislature: "",
       primaryDate: "August 11, 2026",
@@ -1097,10 +1139,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Jim Pillen",
+      currentGovParty: "R",
+      lastGovMargin: "R+6",
+      presMargin2024: "R+20.5",
       pvi: "",
       legislature: "",
       primaryDate: "May 12, 2026",
@@ -1125,10 +1167,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Joe Lombardo",
+      currentGovParty: "R",
+      lastGovMargin: "R+1",
+      presMargin2024: "R+3.1",
       pvi: "",
       legislature: "",
       primaryDate: "June 9, 2026",
@@ -1153,10 +1195,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Kelly Ayotte",
+      currentGovParty: "R",
+      lastGovMargin: "R+9",
+      presMargin2024: "D+2.8",
       pvi: "",
       legislature: "",
       primaryDate: "September 8, 2026",
@@ -1184,10 +1226,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Michelle Lujan Grisham",
+      currentGovParty: "D",
+      lastGovMargin: "D+9",
+      presMargin2024: "D+6.0",
       pvi: "",
       legislature: "",
       primaryDate: "June 2, 2026",
@@ -1203,10 +1245,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Kathy Hochul",
+      currentGovParty: "D",
+      lastGovMargin: "D+6",
+      presMargin2024: "D+12.6",
       pvi: "",
       legislature: "",
       primaryDate: "June 23, 2026",
@@ -1273,10 +1315,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Kevin Stitt",
+      currentGovParty: "R",
+      lastGovMargin: "R+11",
+      presMargin2024: "R+34.3",
       pvi: "",
       legislature: "",
       primaryDate: "June 16, 2026",
@@ -1292,10 +1334,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Tina Kotek",
+      currentGovParty: "D",
+      lastGovMargin: "D+4",
+      presMargin2024: "D+14.3",
       pvi: "",
       legislature: "",
       primaryDate: "May 19, 2026",
@@ -1320,10 +1362,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Josh Shapiro",
+      currentGovParty: "D",
+      lastGovMargin: "D+15",
+      presMargin2024: "R+1.7",
       pvi: "",
       legislature: "",
       primaryDate: "May 19, 2026",
@@ -1348,10 +1390,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Dan McKee",
+      currentGovParty: "D",
+      lastGovMargin: "D+14",
+      presMargin2024: "D+13.8",
       pvi: "",
       legislature: "",
       primaryDate: "September 8, 2026",
@@ -1376,10 +1418,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Henry McMaster",
+      currentGovParty: "R",
+      lastGovMargin: "R+9",
+      presMargin2024: "R+17.9",
       pvi: "",
       legislature: "",
       primaryDate: "June 9, 2026",
@@ -1395,10 +1437,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Larry Rhoden",
+      currentGovParty: "R",
+      lastGovMargin: "R+23",
+      presMargin2024: "R+29.2",
       pvi: "",
       legislature: "",
       primaryDate: "June 2, 2026",
@@ -1423,10 +1465,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Bill Lee",
+      currentGovParty: "R",
+      lastGovMargin: "R+11",
+      presMargin2024: "R+29.7",
       pvi: "",
       legislature: "",
       primaryDate: "August 6, 2026",
@@ -1481,10 +1523,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: true,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Phil Scott",
+      currentGovParty: "R",
+      lastGovMargin: "R+52",
+      presMargin2024: "D+31.5",
       pvi: "",
       legislature: "",
       primaryDate: "August 11, 2026",
@@ -1518,10 +1560,10 @@
       active: true,
       termLimited: false,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Tony Evers",
+      currentGovParty: "D",
+      lastGovMargin: "D+3",
+      presMargin2024: "R+0.9",
       pvi: "",
       legislature: "",
       primaryDate: "August 11, 2026",
@@ -1537,10 +1579,10 @@
       active: true,
       termLimited: true,
       incumbentRunning: false,
-      currentGov: "",
-      currentGovParty: "",
-      lastGovMargin: "",
-      presMargin2024: "",
+      currentGov: "Mark Gordon",
+      currentGovParty: "R",
+      lastGovMargin: "R+20",
+      presMargin2024: "R+45.8",
       pvi: "",
       legislature: "",
       primaryDate: "August 18, 2026",
@@ -1808,11 +1850,21 @@
   // ============================================================
   // DETAIL PANEL
   // ============================================================
-  function renderDefault() {
-    var panel = document.getElementById('govDetailPanel');
-    panel.classList.remove('has-content');
-    panel.innerHTML = '<p class="detail-placeholder">Click a state to see race details</p>';
+  function closeModal() {
+    var panel    = document.getElementById('govDetailPanel');
+    var backdrop = document.getElementById('govDetailBackdrop');
+    panel.style.display    = 'none';
+    backdrop.style.display = 'none';
+    activeAbbr = null;
+    d3.selectAll('.state-path').classed('is-selected', false);
     activeProfileCandidate = null;
+  }
+
+  document.getElementById('govDetailClose').addEventListener('click', closeModal);
+  document.getElementById('govDetailBackdrop').addEventListener('click', closeModal);
+
+  function renderDefault() {
+    closeModal();
   }
 
   function ratingBadgeColor(rating) {
@@ -1828,16 +1880,22 @@
   }
 
   function renderStateDetail(abbr) {
-    var panel = document.getElementById('govDetailPanel');
-    var name  = ABBR_TO_NAME[abbr] || abbr;
-    var data  = stateData[abbr];
+    var panel    = document.getElementById('govDetailPanel');
+    var backdrop = document.getElementById('govDetailBackdrop');
+    var name     = ABBR_TO_NAME[abbr] || abbr;
+    var data     = stateData[abbr];
+
+    var closeBtn = '<button class="detail-close-btn" id="govDetailClose" aria-label="Close">&times;</button>';
 
     if (!data || !data.active) {
       panel.classList.remove('has-content');
       panel.style.borderTop = '';
-      panel.innerHTML =
+      panel.innerHTML = closeBtn +
         '<div><p class="detail-state-name">' + name + '</p>' +
         '<p class="detail-body">No 2026 gubernatorial race in ' + name + '.</p></div>';
+      document.getElementById('govDetailClose').addEventListener('click', closeModal);
+      backdrop.style.display = 'block';
+      panel.style.display    = 'block';
       return;
     }
 
@@ -1865,7 +1923,7 @@
     if (contextItems.length) {
       html += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">';
       contextItems.forEach(function(item) {
-        html += '<span style="font-size:11px;padding:3px 8px;border-radius:4px;' +
+        html += '<span style="font-size:13px;padding:6px 12px;border-radius:6px;' +
                 'background:#F1F5F9;color:#475569;font-weight:500">' + item.label + '</span>';
       });
       html += '</div>';
@@ -1930,7 +1988,10 @@
     html += '<div id="dp-profile-section"></div>';
 
     html += '</div>';
-    panel.innerHTML = html;
+    panel.innerHTML = closeBtn + html;
+    document.getElementById('govDetailClose').addEventListener('click', closeModal);
+    backdrop.style.display = 'block';
+    panel.style.display    = 'block';
     activeProfileCandidate = null;
   }
 
@@ -1988,6 +2049,7 @@
     // Bio
     if (c.bio) {
       html += '<p class="dp-profile-bio">' + c.bio + '</p>';
+      html += '<span style="display:block;font-size:11px;color:#888;font-style:italic;margin-top:8px;border-top:1px solid #eee;padding-top:6px">Via campaign site</span>';
     }
 
     // Key issues chips
